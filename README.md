@@ -1,29 +1,40 @@
-# LOOKIN' FOR ADVENTURE - HEAD OUT ON THE HIGHWAY
-
-Word has just come from the higher-ups, and you're in charge of building out a domain that keeps track of cars, their owners, and the mechanics that service them.  Each car has its own classification, like "antique", "exotic", or "clunker", and each mechanic has a specialization (these are the same as car classifications).  You don't want to take your sweet souped up '94 Camaro to some jerk that specializes in beamers right?
-
-Each CarOwner may have a ton of cars, but these folks are fanatical about their maintenance, and only see one mechanic per car.
-
-The basics have been built out for you, but you'll need to figure out the relationships and create most of the methods.  Hook it up!
+# BetterLyft™ 
 
 ## Deliverables
+You are building an app for a Lyft/Uber competitor
+- your models are passengers, drivers, rides
+  - a passenger has many rides
+  - a driver has many rides
+  - a ride belongs to a passenger and a driver
+    - a ride is initialized with a distance (as a float)
+Write out the relationships using has_many, belongs_to and has_many_through. Create the necessary methods to connect these classes.
 
-Here's what we need to be able to do.
+#### Passenger
+- #drivers
+  - returns all drivers a passenger has ridden with
+- #rides
+  - returns all rides a passenger has been on
+- .all
+  - returns an array of all passengers
+- #total_distance
+  - should calculate the total distance the passenger has travelled with the service
+- .premium_members
+  - should find all passengers who have travelled over 100 miles with the service
 
-**CarOwner**
-  - Get a list of all owners
-  - Get a list of all the cars that a specific owner has
-  - Get a list of all the mechanics that a specific owner goes to
-  - Get the average amount of cars owned for all owners
+#### Driver
+- #passengers
+  - returns all passengers a driver has had
+- #rides
+  - returns all rides a driver has made
+- .all
+  - returns an array of all drivers
+- .mileage_cap(distance)
+  - takes an argument of a distance (float) and returns all drivers who have exceeded that mileage
 
-**Car**
-  - Get a list of all cars
-  - Get a list of all car classifications
-  - Get a list of mechanics that have an expertise that matches the car classification
-
-**Mechanic**
-  - Get a list of all mechanics
-  - Get a list of all cars that a mechanic services
-  - Get a list of all the car owners that go to a specific mechanic
-  - Get a list of the names of all car owners who
-  go to a specific mechanic
+#### Ride
+- #passenger
+  - returns the passenger object for that ride
+- #driver
+  - returns the driver object for that ride
+- .average_distance
+  - should find the average distance of all rides
