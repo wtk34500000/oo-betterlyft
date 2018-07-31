@@ -1,5 +1,4 @@
 class Car
-
   attr_reader :make, :model
 
   def initialize(make, model, classification)
@@ -7,5 +6,6 @@ class Car
     @model = model
     @classification = classification
   end
+
 
 end
