@@ -11,7 +11,9 @@ You are building an app for a Lyft/Uber competitor. The models that you will use
 Always start by drawing out the relationship either on a whiteboard or piece of paper. Think about how each of these models will be connected. From there then begin writing code.
 
 #### Passenger
-A Passenger should be initialized with a name as a string.
+A Passenger should be initialized with a name as a string. After the Passenger has been initialized, it shouldn't be changed.
+- `Passenger#name`
+  - Returns the name of the passenger
 - `Passenger#rides`
   - Returns an array of Ride instances that this person has been on
 - `Passenger#drivers`
@@ -38,8 +40,8 @@ A Ride should be initialized with a driver (as a Driver object), a passenger (as
   
 #### Driver
 A Driver should be initialized with a name as a string.
-- `Driver#passengers`
-  - Returns an array of all Passengers' names a driver has driven. The names should be unique (no repeats).
+- `Driver#passenger_names`
+  - Returns an array of all Passengers' names a driver has driven. The names should be **unique** (no repeats).
 - `Driver#rides`
   - Returns an array of all Rides a driver has made
 - `Driver#name`
