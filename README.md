@@ -1,40 +1,45 @@
 # BetterLyft™ 
 
 ## Deliverables
-You are building an app for a Lyft/Uber competitor
-- your models are passengers, drivers, rides
-  - a passenger has many rides
-  - a driver has many rides
-  - a ride belongs to a passenger and a driver
-    - a ride is initialized with a distance (as a float)
-Write out the relationships using has_many, belongs_to and has_many_through. Create the necessary methods to connect these classes.
+You are building an app for a Lyft/Uber competitor. The models that you will use for your application are: Passenger, Driver, and Ride.
+
+## Domain Modeling
+  - A Passenger has many rides
+  - A Driver has many rides
+  - A Ride belongs to a passenger and a driver
+  
+Always start by drawing out the relationship either on a whiteboard or piece of paper. Think about how each of these models will be connected. From there then begin writing code.
 
 #### Passenger
-- #drivers
-  - returns all drivers a passenger has ridden with
-- #rides
-  - returns all rides a passenger has been on
-- .all
-  - returns an array of all passengers
-- #total_distance
-  - should calculate the total distance the passenger has travelled with the service
-- .premium_members
-  - should find all passengers who have travelled over 100 miles with the service
-
-#### Driver
-- #passengers
-  - returns all passengers a driver has had
-- #rides
-  - returns all rides a driver has made
-- .all
-  - returns an array of all drivers
-- .mileage_cap(distance)
-  - takes an argument of a distance (float) and returns all drivers who have exceeded that mileage
+A Passenger should be initialized with a name as a string.
+- `Passenger#rides`
+  - Returns an array of Ride instances that this person has been on
+- `Passenger#drivers`
+  - Returns an array of Driver instances that this person has rode with
+- `Passenger#total_distance`
+  - Returns the floating number that represents the total distance the passenger has travelled using the service
+- `Passenger.all`
+  - Returns an array of all Passengers
+- `Passenger.premium_members`
+  - Returns an array of all Passengers who have travelled over 100 miles in total with the service
 
 #### Ride
-- #passenger
-  - returns the passenger object for that ride
-- #driver
-  - returns the driver object for that ride
-- .average_distance
-  - should find the average distance of all rides
+A Ride should be initialized with a driver (as a Driver object), a passenger (as a Passenger object), and a distance (as a float i.e. `3.2`). The distance refers to miles.
+- `Ride#passenger`
+  - Returns the Passenger object for that ride
+- `Ride#driver`
+  - Returns the Driver object for that ride
+- `Ride.average_distance`
+  - Returns the average distance across ALL rides
+  
+#### Driver
+A Driver should be initialized with a name as a string.
+- `Driver#passengers`
+  - Returns an array of all Passengers a driver has had
+- `Driver#rides`
+  - Returns an array of all Rides a driver has made
+- `Driver.all`
+  - Returns an array of all Drivers
+- `Driver.mileage_cap(distance)`
+  - Takes an argument of a distance (float) and returns an array of all Drivers who have driven over the mileage
+
