@@ -39,7 +39,7 @@ A Ride should be initialized with a driver (as a Driver object), a passenger (as
 #### Driver
 A Driver should be initialized with a name as a string.
 - `Driver#passengers`
-  - Returns an array of all Passenger's names a driver has driven
+  - Returns an array of all Passengers' names a driver has driven. The names should be unique (no repeats).
 - `Driver#rides`
   - Returns an array of all Rides a driver has made
 - `Driver#name`
