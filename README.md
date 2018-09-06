@@ -18,6 +18,8 @@ A Passenger should be initialized with a name as a string.
   - Returns an array of Driver instances that this person has rode with
 - `Passenger#total_distance`
   - Returns the floating number that represents the total distance the passenger has travelled using the service
+- `Passenger#name`
+  - Returns the passenger's name
 - `Passenger.all`
   - Returns an array of all Passengers
 - `Passenger.premium_members`
@@ -29,15 +31,19 @@ A Ride should be initialized with a driver (as a Driver object), a passenger (as
   - Returns the Passenger object for that ride
 - `Ride#driver`
   - Returns the Driver object for that ride
+- `Ride#distance`
+  - Returns the distance of the ride
 - `Ride.average_distance`
   - Returns the average distance across ALL rides
   
 #### Driver
 A Driver should be initialized with a name as a string.
 - `Driver#passengers`
-  - Returns an array of all Passengers a driver has had
+  - Returns an array of all Passenger's names a driver has driven
 - `Driver#rides`
   - Returns an array of all Rides a driver has made
+- `Driver#name`
+  - Returns the driver's name
 - `Driver.all`
   - Returns an array of all Drivers
 - `Driver.mileage_cap(distance)`
