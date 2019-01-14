@@ -18,7 +18,7 @@ class Driver
                 result<<ride.passenger.name
            end
         end
-        result
+        result.uniq
     end
 
     def rides
